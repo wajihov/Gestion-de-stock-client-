@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2</title>
+    <title>SB Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<%=request.getContextPath() %>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header"><fmt:message key="common.dashbord" /></h1>
+                        <h1 class="page-header">Blank page</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
