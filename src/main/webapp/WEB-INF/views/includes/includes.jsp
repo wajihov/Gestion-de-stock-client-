@@ -5,8 +5,10 @@
 <%@ page session="true" %>
 <%@ page trimDirectiveWhitespaces="true"  %>
 <%
-
-	//String locale="fr_FR"; 
+	//String locale="fr_FR";
+	//if(!session.getAttribute("locale").toString().equals(null)){
+		//locale= session.getAttribute("locale").toString();
+	//}
 %>
-<!--<fmt:setLocale value="${locale }" />
-<fmt:bundle basename=""></fmt:bundle>-->
+<fmt:setLocale value="${locale }" />
+<fmt:bundle basename="com.access.hr.i18n.applicationresources"/>
