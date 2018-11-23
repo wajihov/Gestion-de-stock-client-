@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="articleDao" class="com.access.hr.dao.impl.ArticleDaoImpl" />
+	<bean id="articleService" class="com.access.hr.services.impl.ArticleServiceImpl">
+		<property name="dao" ref="articleDao"></property>
+	</bean>
+
+	<bean id="categorieDao" class="com.access.hr.dao.impl.CategorieDaoImpl" />
+	<bean id="categorieService" class="com.access.hr.services.impl.CategorieServiceImpl">
+		<property name="dao" ref="categorieDao"></property>
+	</bean>
+
+	<bean id="clientDao" class="com.access.hr.dao.impl.ClientDaoImpl" />
+	<bean id="clientService" class="com.access.hr.services.impl.ClientServiceImpl">
+		<property name="dao" ref="clientDao"></property>
+	</bean>
+
+	<bean id="commandeClientDao" class="com.access.hr.dao.impl.CmdClientDaoImpl" />
+	<bean id="commandeClientService" class="com.access.hr.services.impl.CommandeClientServiceImpl">
+		<property name="dao" ref="commandeClientDao"></property>
+	</bean>
+
+	<bean id="commandeFournisseurDao" class="com.access.hr.dao.impl.CmdFournisseurDaoImpl" />
+	<bean id="commandeFournisseurService"
+		class="com.access.hr.services.impl.CommandeFournisseurServiceImpl">
+		<property name="dao" ref="commandeFournisseurDao"></property>
+	</bean>
+
+	<bean id="fournisseurDao" class="com.access.hr.dao.impl.FournisseurDaoImpl" />
+	<bean id="fournisseurService" class="com.access.hr.services.impl.FournisseurServiceImpl">
+		<property name="dao" ref="fournisseurDao"></property>
+	</bean>
+
+	<bean id="ligneCmdClientDao" class="com.access.hr.dao.impl.LigneCmdClientDaoImpl" />
+	<bean id="ligneCmdClientService" class="com.access.hr.services.impl.LigneCmdClientServiceImpl">
+		<property name="dao" ref="ligneCmdClientDao"></property>
+	</bean>
+
+	<bean id="ligneCmdFournisseurDao" class="com.access.hr.dao.impl.LigneCmdFournisseurDaoImpl" />
+	<bean id="ligneCmdFournisseurService"
+		class="com.access.hr.services.impl.LigneCmdFournisseurServiceImpl">
+		<property name="dao" ref="ligneCmdFournisseurDao"></property>
+	</bean>
+
+	<bean id="ligneVenteDao" class="com.access.hr.dao.impl.LigneVenteDaoImpl" />
+	<bean id="ligneVenteService" class="com.access.hr.services.impl.LigneVenteServiceImpl">
+		<property name="dao" ref="ligneVenteDao"></property>
+	</bean>
+
+	<bean id="mvtStockDao" class="com.access.hr.dao.impl.MvtStockDaoImpl" />
+	<bean id="mvtStockService" class="com.access.hr.services.impl.MvtStockServiceImpl">
+		<property name="dao" ref="mvtStockDao"></property>
+	</bean>
+
+	<bean id="utilisateurDao" class="com.access.hr.dao.impl.UtilisateurDaoImpl" />
+	<bean id="utilisateurService" class="com.access.hr.services.impl.UtilisateurServiceImpl">
+		<property name="dao" ref="utilisateurDao"></property>
+	</bean>
+
+	<bean id="venteDao" class="com.access.hr.dao.impl.VenteDaoImpl" />
+	<bean id="venteService" class="com.access.hr.services.impl.VenteServiceImpl">
+		<property name="dao" ref="venteDao"></property>
+	</bean>
+	
+	<bean id="flickrDao" class="com.access.hr.dao.impl.FlickrDaoImpl" />
+	<bean id="flickrService" class="com.access.hr.services.impl.FlickrServiceImpl">
+		<property name="dao" ref="flickrDao"></property>
+	</bean>
+</beans>
