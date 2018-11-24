@@ -14,30 +14,34 @@
 
 <!-- Bootstrap Core CSS -->
 <link
-	href="<%=request.getContextPath() %>/resources/vendor/bootstrap/css/bootstrap.min.css"
+	href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- MetisMenu CSS -->
 <link
-	href="<%=request.getContextPath() %>/resources/vendor/metisMenu/metisMenu.min.css"
+	href="<%=request.getContextPath()%>/resources/vendor/metisMenu/metisMenu.min.css"
 	rel="stylesheet">
 
 <!-- Custom CSS -->
 <link
-	href="<%=request.getContextPath() %>/resources/dist/css/sb-admin-2.css"
+	href="<%=request.getContextPath()%>/resources/dist/css/sb-admin-2.css"
 	rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link
-	href="<%=request.getContextPath() %>/resources/vendor/font-awesome/css/font-awesome.min.css"
+	href="<%=request.getContextPath()%>/resources/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-	
-	<!-- DataTables CSS -->
-    <link href="<%=request.getContextPath() %>/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-    
-    
-    <!-- DataTables Responsive CSS -->
-    <link href="<%=request.getContextPath() %>/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link
+	href="<%=request.getContextPath()%>/resources/vendor/datatables-plugins/dataTables.bootstrap.css"
+	rel="stylesheet">
+
+
+<!-- DataTables Responsive CSS -->
+<link
+	href="<%=request.getContextPath()%>/resources/vendor/datatables-responsive/dataTables.responsive.css"
+	rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,54 +78,83 @@
 					</div>
 					<!-- /.col-lg-12 -->
 				</div>
-				
+
 				<div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <fmt:message key="client.list" />
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th><fmt:message key="common.nom" /> </th>
-                                        <th><fmt:message key="common.prenom" /></th>
-                                        <th><fmt:message key="common.adresse" /></th>
-                                        <th><fmt:message key="common.mail" /></th>
-                                        <th><fmt:message key="common.photo" /></th>
-                                        <th><fmt:message key="common.action" /></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${clients }" var="client" >
-                                	<tr class="odd gradeX">
-                                        <td>${client.getNom() }</td>
-                                        <td>${client.getPrenom() }</td>
-                                        <td>${client.adresse }</td>
-                                        <td class="center">${client.mail }</td>
-                                        <td class="center"><img alt="" src="${client.getPhoto() }" width="50px" height="50px"> </td>
-                                        <td>actions</td>                                        
-                                    </tr>                                
-                                </c:forEach>
-                                    
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                            <div class="well">
-                                <h4>DataTables Usage Information</h4>
-                                <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
-                                <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-				
+					<div class="col-lg-12">
+						<ul class="breadcrumb">
+							<li><a href="#"><i class="fa fa-plus"> <fmt:message
+											key="common.ajouter" />
+								</i> </a> <span class="divider"></span></li>
+							<li><a href="#"><i class="fa fa-upload"> <fmt:message
+											key="common.exporter" /></i></a> <span class="divider"></span></li>
+							<li><a href="#"><i class="fa fa-download"> <fmt:message
+											key="common.importer" /></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<fmt:message key="client.list" />
+							</div>
+							<!-- /.panel-heading -->
+							<div class="panel-body">
+								<table width="100%"
+									class="table table-striped table-bordered table-hover"
+									id="dataTables-example">
+									<thead>
+										<tr>
+											<th><fmt:message key="common.nom" /></th>
+											<th><fmt:message key="common.prenom" /></th>
+											<th><fmt:message key="common.adresse" /></th>
+											<th><fmt:message key="common.mail" /></th>
+											<th><fmt:message key="common.photo" /></th>
+											<th><fmt:message key="common.action" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach items="${clients }" var="client">
+											<tr class="odd gradeX">
+												<td>${client.getNom() }</td>
+												<td>${client.getPrenom() }</td>
+												<td>${client.adresse }</td>
+												<td class="center">${client.mail }</td>
+												<td class="center"><img alt=""
+													src="${client.getPhoto() }" width="50px" height="50px">
+												</td>
+												<td><a href="#"><i
+														class="glyphicon glyphicon-trash"></i></a> | <a href="#"><i
+														class="glyphicon glyphicon-edit"> </i></a></td>
+											</tr>
+										</c:forEach>
+
+									</tbody>
+								</table>
+								<!-- /.table-responsive -->
+								<div class="well">
+									<h4>DataTables Usage Information</h4>
+									<p>
+										DataTables is a very flexible, advanced tables plugin for
+										jQuery. In SB Admin, we are using a specialized version of
+										DataTables built for Bootstrap 3. We have also customized the
+										table headings to use Font Awesome icons in place of images.
+										For complete documentation on DataTables, visit their website
+										at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.
+									</p>
+									<a class="btn btn-default btn-lg btn-block" target="_blank"
+										href="https://datatables.net/">View DataTables
+										Documentation</a>
+								</div>
+							</div>
+							<!-- /.panel-body -->
+						</div>
+						<!-- /.panel -->
+					</div>
+					<!-- /.col-lg-12 -->
+				</div>
+
 
 
 				<!-- /.row -->
@@ -135,36 +168,40 @@
 
 	<!-- jQuery -->
 	<script
-		src="<%=request.getContextPath() %>/resources/vendor/jquery/jquery.min.js"></script>
+		src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script
-		src="<%=request.getContextPath() %>/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+		src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Metis Menu Plugin JavaScript -->
 	<script
-		src="<%=request.getContextPath() %>/resources/vendor/metisMenu/metisMenu.min.js"></script>
+		src="<%=request.getContextPath()%>/resources/vendor/metisMenu/metisMenu.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
 	<script
-		src="<%=request.getContextPath() %>/resources/dist/js/sb-admin-2.js"></script>
-		
-		<!-- DataTables JavaScript -->
-    <script src="<%=request.getContextPath() %>/resources/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<%=request.getContextPath() %>/resources/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="<%=request.getContextPath() %>/resources/vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="<%=request.getContextPath() %>/resources/dist/js/sb-admin-2.js"></script>
+		src="<%=request.getContextPath()%>/resources/dist/js/sb-admin-2.js"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-    </script>
-		
+	<!-- DataTables JavaScript -->
+	<script
+		src="<%=request.getContextPath()%>/resources/vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/vendor/datatables-responsive/dataTables.responsive.js"></script>
+	<!-- Custom Theme JavaScript -->
+	<script
+		src="<%=request.getContextPath()%>/resources/dist/js/sb-admin-2.js"></script>
+
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+	</script>
+
 
 </body>
 
