@@ -16,8 +16,7 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/blank")
-	public String blankHome() {
-		
+	public String blankHome() {		
 		return "blank/blank";
 	}
 
