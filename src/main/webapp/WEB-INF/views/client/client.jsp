@@ -82,7 +82,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<ul class="breadcrumb">
-							<li><a href="#"><i class="fa fa-plus"> <fmt:message
+							<li><a href='<c:url value="/client/nouveau"/>'><i class="fa fa-plus"> <fmt:message
 											key="common.ajouter" />
 								</i> </a> <span class="divider"></span></li>
 							<li><a href="#"><i class="fa fa-upload"> <fmt:message
